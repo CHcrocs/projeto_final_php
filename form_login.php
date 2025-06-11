@@ -1,6 +1,6 @@
 <h1>Informe seu nome de usuário e senha</h1>
 
-<form action="validacao.php" method="post">
+<form action="validacao_login.php" method="post">
     <label for="nome">Nome:</label>
     <input type="text" name="nome" id="nome" required placeholder="Digite seu nome">
     <br>
