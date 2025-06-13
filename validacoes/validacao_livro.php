@@ -1,6 +1,8 @@
 <?php
 require_once '../funcoes.php';
 
+session_start();
+
 if (form_nao_enviado()) {
     header('Location: ../livros.php?codigo=0'); // Formulário não enviado
     exit;
