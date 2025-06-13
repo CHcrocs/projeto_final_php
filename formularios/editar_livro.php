@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+    <div id="container">
     <h1>Edição de livros</h1>
     <a href="../livros.php">Voltar</a>
     <?php
@@ -47,6 +49,6 @@
             <button type="submit">Editar</button>
             <br>
         </form>
-
+    </div>
 </body>
 </html>

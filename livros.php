@@ -9,17 +9,20 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Biblioteca</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-
-    <h1>Seja bem-vindo <?= $_SESSION['nome'] ?></h1>
+<div id="container">
+    <h1 >Seja bem-vindo <?= $_SESSION['nome'] ?></h1>
 
     <a href="logout.php">Deslogar</a>
 
     <?php
 
     require_once 'formularios/form_livro.php';
+
+    echo "<br>";
 
     require_once 'funcoes.php';
 
@@ -53,7 +56,7 @@ session_start();
         $autor_atual = $titulo['autor'];
 
         echo    "<li>";
-        echo        "Titulo: " . $livro_atual . " | Autor: " . $autor_atual . " | ";
+        echo        "Titulo: " . $livro_atual . "<br> Autor: " . $autor_atual . " ";
         echo        ' <a href="formularios/editar_livro.php?id_livro=' . $id_livro . '"> Editar </a>';
         echo    '<a href="excluir_livro.php?id_livro=' . $id_livro . '"> X </a>';
         echo    "</li>";
@@ -62,6 +65,7 @@ session_start();
 
     ?>
 
+</div>
 </body>
 
 </html>

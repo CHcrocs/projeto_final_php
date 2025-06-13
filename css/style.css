@@ -1,1 +1,179 @@
 @charset "UTF-8";
+
+/* --- Variáveis de Cor e Fontes --- */
+:root {
+    --cor-primaria: #007bff;
+    --cor-secundaria: #0056b3;
+    --cor-fundo: #22272e;
+    --cor-container: #2d333b;
+    --cor-borda: #444c56;
+    --cor-texto: #adbac7;
+    --cor-texto-titulo: #cdd9e5;
+    --cor-sucesso: #28a745;
+    --cor-perigo: #dc3545;
+    --cor-input-fundo: #22272e;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* --- Estilos Gerais --- */
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--cor-secundaria);
+    text-decoration: underline;
+}
+
+/* --- Container Principal --- */
+#container {
+    background-color: var(--cor-container);
+    padding: 50px 50px;
+    border-radius: 8px;
+    border: 1px solid var(--cor-borda);
+    width: 90svw;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Títulos e Cabeçalhos --- */
+h1, h2, h3 {
+    color: var(--cor-texto-titulo);
+    border-bottom: 1px solid var(--cor-borda);
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-top: 30px;
+}
+
+/* --- Formulários --- */
+form {
+    margin-top: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="number"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 5px;
+    background-color: var(--cor-input-fundo);
+    color: var(--cor-texto);
+    font-size: 1em;
+}
+
+form input:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 5px var(--cor-primaria);
+}
+
+/* --- Botões --- */
+button, a.botao {
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+}
+
+button:hover, a.botao:hover {
+    background-color: var(--cor-secundaria);
+    text-decoration: none;
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+}
+
+/* --- Lista de Livros --- */
+ol {
+    display: flex; 
+    gap: 20px;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+}
+
+ol li {
+    background-color: var(--cor-fundo);
+    width: 15%;
+    margin-bottom: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid var(--cor-borda);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+ol li:hover {
+    background-color: #353c4a;
+}
+
+ol li a {
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+/* Links de Ação na Lista */
+a[href*="editar_livro.php"] {
+    color: var(--cor-sucesso);
+}
+a[href*="editar_livro.php"]:hover {
+    color: #1e7e34;
+}
+
+a[href*="excluir_livro.php"] {
+    color: var(--cor-perigo);
+}
+a[href*="excluir_livro.php"]:hover {
+    color: #b21f2d;
+}
+
+/* Link de Logout */
+a[href="logout.php"] {
+    display: inline-block;
+    margin-bottom: 20px;
+    background-color: var(--cor-perigo);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+a[href="logout.php"]:hover {
+    background-color: #b21f2d;
+    text-decoration: none;
+}
