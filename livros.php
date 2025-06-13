@@ -12,7 +12,7 @@
     
     ?>
 
-    <a href="logout.php">Deslogar minha bola direita</a>
+    <a href="logout.php">Deslogar</a>
 
     <!-- listar os livros cadastrados do usuario -->
 </body>
