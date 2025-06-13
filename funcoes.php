@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 function form_nao_enviado(): bool {
     return $_SERVER['REQUEST_METHOD'] !== 'POST';

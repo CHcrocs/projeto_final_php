@@ -46,15 +46,15 @@ if ($linhas <= 0) {
         exit;
 }   
 
-mysqli_stmt_bind_result($stmt, $login_id, $login_usuario, $login_senha, $login_email);
+mysqli_stmt_bind_result($stmt, $login_id, $login_nome, $login_senha, $login_email);
 mysqli_stmt_fetch($stmt);
 
-echo "$login_id, $login_usuario, $login_senha, $login_email";
+echo "$login_id, $login_nome, $login_senha, $login_email";
         
 session_start();
 
 $_SESSION['id']         = $login_id;
-$_SESSION['usuario']    = $login_usuario;
+$_SESSION['nome']    = $login_nome;
 $_SESSION['senha']      = $login_senha;
 $_SESSION['email']      = $login_email;
 header('Location: ../livros.php');
