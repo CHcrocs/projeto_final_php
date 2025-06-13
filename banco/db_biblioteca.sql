@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 13/06/2025 às 05:37
+-- Tempo de geração: 13/06/2025 às 06:05
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -34,6 +34,13 @@ CREATE TABLE `tb_livros` (
   `id_usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `tb_livros`
+--
+
+INSERT INTO `tb_livros` (`id_livro`, `titulo`, `autor`, `id_usuario`) VALUES
+(16, 'Livro AAB', 'Autor AAA', 5);
+
 -- --------------------------------------------------------
 
 --
@@ -46,6 +53,13 @@ CREATE TABLE `tb_usuarios` (
   `contato` varchar(100) NOT NULL,
   `senha` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `tb_usuarios`
+--
+
+INSERT INTO `tb_usuarios` (`id`, `nome`, `contato`, `senha`) VALUES
+(5, 'Boneco de testes', '914870432', '123123');
 
 --
 -- Índices para tabelas despejadas
@@ -71,13 +85,13 @@ ALTER TABLE `tb_usuarios`
 -- AUTO_INCREMENT de tabela `tb_livros`
 --
 ALTER TABLE `tb_livros`
-  MODIFY `id_livro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_livro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de tabela `tb_usuarios`
 --
 ALTER TABLE `tb_usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

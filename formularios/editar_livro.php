@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['id']) || !isset($_SESSION['nome'])) {
+    header('Location: ../index.php?codigo=0'); // Redireciona para a página de login com código de erro
+    exit; // Impede que outro trecho de código seja executado após o redirecionamento
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

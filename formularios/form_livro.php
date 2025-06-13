@@ -1,4 +1,4 @@
-<h1>Informe o titulo e o nome do autor do livro</h1>
+<h1>Informe o título e o nome do autor</h1>
 
 <form action="validacoes/validacao_livro.php" method="post">
     <label for="titulo">Titulo:</label>

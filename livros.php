@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+if (!isset($_SESSION['id']) || !isset($_SESSION['nome'])) { // Verifica se as variáveis de sessão estão definidas
+    header('Location: index.php?codigo=0'); // Redireciona para a página de login com código de erro
+    exit; // Impede que outro trecho de código seja executado após o redirecionamento
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +36,8 @@ session_start();
 
     $id = $_SESSION['id'];
 
+    // Consulta SQL para buscar os livros do usuário logado
+    // Utiliza INNER JOIN para obter informações do usuário associado a cada livro
     $sql = "    SELECT id_livro, titulo, autor FROM tb_livros
             INNER JOIN tb_usuarios
             ON tb_livros.id_usuario = tb_usuarios.id
@@ -41,7 +49,9 @@ session_start();
 
     $resultado = mysqli_query($conn, $sql);
 
+    // Verifica se a consulta retornou resultados
     if (mysqli_affected_rows($conn) <= 0) {
+        // Se não houver livros registrados, exibe uma mensagem e encerra o script
         exit("<h3>Não há Livros registrados ainda</h3>");
     }
 
@@ -49,6 +59,8 @@ session_start();
 
     echo "<ol>";
 
+    // Loop para exibir cada livro encontrado na consulta
+    // Utiliza mysqli_fetch_assoc para obter os dados de cada livro como um array associativo
     while ($titulo = mysqli_fetch_assoc($resultado)) {
 
         $id_livro = $titulo['id_livro'];

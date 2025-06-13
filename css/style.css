@@ -121,6 +121,7 @@ button a {
 ol {
     display: flex; 
     gap: 20px;
+    width: 100svw;
     flex-wrap: wrap;
     list-style: none;
     padding: 0;
@@ -128,7 +129,7 @@ ol {
 
 ol li {
     background-color: var(--cor-fundo);
-    width: 15%;
+    width: 22svw;
     margin-bottom: 10px;
     padding: 20px;
     border-radius: 5px;

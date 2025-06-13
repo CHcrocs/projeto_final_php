@@ -21,24 +21,31 @@ require_once 'banco/conexao.php';
 
 $conn = conectar_banco();
 
+// SQL para atualizar o livro
 $sql = "UPDATE tb_livros SET titulo = ?, autor = ?, id_usuario = ? WHERE id_livro = ?";
 
+// Prepara a consulta
 $stmt = mysqli_prepare($conn, $sql);
 
+// Verifica se a preparação da consulta foi bem-sucedida
 if (!$stmt) {
     header('location:livros.php?codigo=3'); // Erro na preparação da consulta
     exit;
 }
 
+// Vincula os parâmetros à consulta
 mysqli_stmt_bind_param($stmt, "ssii", $titulo, $autor, $id_usuario, $id_livro);
 
+// Executa a consulta
 if (!mysqli_stmt_execute($stmt)) {
     header('location:livros.php?codigo=6'); // Erro na execução da consulta
     exit;
 }
 
+// Armazena o resultado da consulta
 mysqli_stmt_store_result($stmt);
 
+// Verifica se a atualização afetou alguma linha
 if (mysqli_stmt_affected_rows($stmt) <= 0) {
     header('location:livros.php?codigo=6'); // Nenhum livro editado
     exit;
@@ -46,6 +53,7 @@ if (mysqli_stmt_affected_rows($stmt) <= 0) {
 
 // Livro editado com sucesso
 header('Location: livros.php');
+
 
 mysqli_stmt_close($stmt);
 mysqli_close($conn);

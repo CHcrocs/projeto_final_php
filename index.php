@@ -30,7 +30,7 @@ if (isset($_SESSION['usuario'])) {
     <?php require_once "formularios/form_login.php" ?>
 
     <h2>Não tem conta?</h2>
-    <a href="cadastro.php" class="botao">Cadastrar</a>
+    <a href="formularios/cadastro.php" class="botao">Cadastrar</a>
 
 </div>
 </body>
