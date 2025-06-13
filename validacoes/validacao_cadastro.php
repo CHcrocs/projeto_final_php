@@ -3,12 +3,12 @@ require_once __DIR__ . '/../funcoes.php';
 require_once __DIR__ . '/../banco/conexao.php';
 
 if (form_nao_enviado()) {
-    header('Location: ../form_cadastro.php?erro=1');
+    header('Location: ../form_cadastro.php?codigo=1');
     exit;
 }
 
 if (campos_vazios_cadastro()) {
-    header('Location: ../form_cadastro.php?erro=2');
+    header('Location: ../form_cadastro.php?codigo=2');
     exit;
 }
 
@@ -23,10 +23,9 @@ mysqli_stmt_bind_param($stmt, "sss", $nome, $contato, $senha);
 
 if (mysqli_stmt_execute($stmt)) {
     session_start();
-    $_SESSION['usuario'] = ['nome' => $nome];
-    header('Location: ../livros.php');
+    header('Location: ../index.php');
 } else {
-    header('Location: ../form_cadastro.php?erro=3');
+    header('Location: ../form_cadastro.php?codigo=3');
 }
 
 mysqli_stmt_close($stmt);

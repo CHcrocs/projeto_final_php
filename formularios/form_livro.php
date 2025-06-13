@@ -1,6 +1,6 @@
 <h1>Informe o titulo e o nome do autor do livro</h1>
 
-<form action="validacao_livro.php" method="post">
+<form action="validacoes/validacao_livro.php" method="post">
     <label for="titulo">Titulo:</label>
     <input type="text" name="titulo" id="titulo" required placeholder="Digite o título do livro">
     <br>

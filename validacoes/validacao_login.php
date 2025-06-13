@@ -3,12 +3,12 @@ require_once __DIR__ . '/../funcoes.php';
 require_once __DIR__ . '/../banco/conexao.php';
 
 if (form_nao_enviado()) {
-    header('Location: ../index.php?erro=1');
+    header('Location: ../index.php?codigo=0');
     exit;
 }
 
 if (campos_vazios_login()) {
-    header('Location: ../index.php?erro=2');
+    header('Location: ../index.php?codigo=2');
     exit;
 }
 
@@ -44,7 +44,7 @@ if ($linhas <= 0) {
         header('location:../index.php?codigo=1'); 
         // codigo 1 = usuario ou senha inválidos
         exit;
-} 
+}   
 
 mysqli_stmt_bind_result($stmt, $login_id, $login_usuario, $login_senha, $login_email);
 mysqli_stmt_fetch($stmt);
