@@ -14,30 +14,6 @@ if (isset($_SESSION['usuario'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Biblioteca</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-        }
-
-        a {
-            text-decoration: none;
-            color: white;
-        }
-
-        .botao {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 16px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .botao:hover {
-            background-color: #45a049;
-        }
-    </style>
 </head>
 <body>
 
@@ -53,7 +29,6 @@ if (isset($_SESSION['usuario'])) {
     <h2>Não tem conta?</h2>
     <p>Cadastre-se para acessar o sistema.</p>
     <a href="cadastro.php" class="botao">Cadastrar</a>
-
 
 </body>
 </html>
