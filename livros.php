@@ -53,7 +53,7 @@ while($titulo = mysqli_fetch_assoc($resultado)) {
     echo        "<p>" . $livro_atual . " | ";
     echo    '<a class="btn btn-outline-danger btn-sm" 
                 style="--bs-btn-padding-y: .10rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
-                href="excluir_tarefa.php?id_tarefa='.$id_livro.'"> X </a></p>';
+                href="excluir_livro.php?id_livro='.$id_livro.'"> X </a></p>';
     echo    "</li>";
 }
 echo "<ol>";
