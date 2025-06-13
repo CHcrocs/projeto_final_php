@@ -23,11 +23,9 @@ if (isset($_SESSION['usuario'])) {
     verificar_codigo();
     ?>
 
-    <h2>Login</h2>
-    <?php include "formularios/form_login.php" ?>
+    <?php require_once "formularios/form_login.php" ?>
 
     <h2>Não tem conta?</h2>
-    <p>Cadastre-se para acessar o sistema.</p>
     <a href="cadastro.php" class="botao">Cadastrar</a>
 
 </body>

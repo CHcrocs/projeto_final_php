@@ -44,6 +44,6 @@ if (mysqli_stmt_affected_rows($stmt) <= 0) {
         exit;
 }
 
-header('Location: ../livros.php?sucesso=1');
+header('Location: ../livros.php');
 
 ?>
