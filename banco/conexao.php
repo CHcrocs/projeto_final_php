@@ -4,7 +4,7 @@ function conectar_banco() {
     $servidor   = 'localhost:3307';
     $usuario    = 'root';
     $senha      = '';
-    $banco      = 'bd_biblioteca';   
+    $banco      = 'db_biblioteca';   
     
     $conn = mysqli_connect($servidor, $usuario, $senha, $banco);
 

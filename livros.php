@@ -8,9 +8,11 @@
 <body>
     <h1>Seja bem-vindo <!-- apresentar nome de usuario --></h1>
     <?php 
-        require_once 'form_livro.php';
+        require_once 'formularios/form_livro.php';
     
     ?>
+
+    <a href="logout.php">Deslogar minha bola direita</a>
 
     <!-- listar os livros cadastrados do usuario -->
 </body>

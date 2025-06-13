@@ -1,16 +1,34 @@
-<?php 
-require_once 'funcoes.php';
+<?php
+require_once __DIR__ . '/../funcoes.php';
+require_once __DIR__ . '/../banco/conexao.php';
 
-// Verifica se o formulário foi enviado e enviar usuario para a pagina inicial com o formulário de login
 if (form_nao_enviado()) {
-    header('Location: cadastro.php');
+    header('Location: ../form_cadastro.php?erro=1');
     exit;
 }
 
-// Verifica se os campos do formulário estão vazios
 if (campos_vazios_cadastro()) {
-    header('Location: cadastro.php');
+    header('Location: ../form_cadastro.php?erro=2');
     exit;
 }
-// depois das verificações logar usuario utilizando session e mandalo para a pagina de livros
-?>
+
+$conn = conectar_banco();
+
+$nome = $_POST['nome'];
+$contato = $_POST['contato'];
+$senha = $_POST['senha'];
+
+$stmt = mysqli_prepare($conn, "INSERT INTO tb_usuarios (nome, contato, senha) VALUES (?, ?, ?)");
+mysqli_stmt_bind_param($stmt, "sss", $nome, $contato, $senha);
+
+if (mysqli_stmt_execute($stmt)) {
+    session_start();
+    $_SESSION['usuario'] = ['nome' => $nome];
+    header('Location: ../livros.php');
+} else {
+    header('Location: ../form_cadastro.php?erro=3');
+}
+
+mysqli_stmt_close($stmt);
+mysqli_close($conn);
+exit;

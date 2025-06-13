@@ -1,27 +1,41 @@
+<?php
+$erro = $_GET['erro'] ?? null;
+$mensagem = '';
+
+switch ($erro) {
+    case 1:
+        $mensagem = 'Formulário não enviado corretamente.';
+        break;
+    case 2:
+        $mensagem = 'Preencha todos os campos obrigatórios.';
+        break;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cadastro</title>
 </head>
-
 <body>
     <h1>Cadastre seu nome de usuário, contato e senha</h1>
 
-    <form action="validacao_cadastro.php" method="post">
+    <?php if ($mensagem): ?>
+        <p style="color:red;"><?= $mensagem ?></p>
+    <?php endif; ?>
+
+    <form action="validacoes/validacao_cadastro.php" method="post">
         <label for="nome">Nome:</label>
-        <input type="text" name="nome" id="nome" required placeholder="Digite seu nome">
+        <input type="text" name="nome" id="nome" required>
         <br>
         <label for="contato">Contato:</label>
-        <input type="contato" name="contato" id="contato" required placeholder="Digite seu contato">
+        <input type="text" name="contato" id="contato" required>
         <br>
         <label for="senha">Senha:</label>
-        <input type="password" name="senha" id="senha" required placeholder="Digite sua senha">
+        <input type="password" name="senha" id="senha" required>
         <br>
         <button type="submit">Cadastrar</button>
     </form>
 </body>
-
 </html>
