@@ -1,7 +1,7 @@
 # projeto_avaliativo_php
 Projeto avaliativo da disciplina Desenvolvimento de Sistemas
-Carlos Henrique Carbonera
-Vitor Gabriel Couto Heimbecker
+<p>Carlos Henrique Carbonera</p>
+<p>Vitor Gabriel Couto Heimbecker</p>
 
 <h1>Registro de livros:</h1>
 
